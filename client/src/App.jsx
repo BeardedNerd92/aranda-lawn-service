@@ -1,5 +1,11 @@
+import Navbar from "./components/navbar/Navbar";
+
 function App() {
-  return <h1 className='text-center'>Als</h1>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 }
 
 export default App;
