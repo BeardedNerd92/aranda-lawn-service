@@ -5,9 +5,9 @@ import Table from "../components/table/Table";
 
 export default function Home() {
   return (
-    <section className='container mx-auto mx-auto py-2'>
+    <section className='container mx-auto mx-auto py-2 '>
       <div className='flex justify-end'>
-        <Button name='Create Invoice' to='invoices' />
+        <Button name='Create +' to='create-invoices' />
       </div>
 
       <div className='flex flex-row justify-evenly'>
@@ -17,7 +17,7 @@ export default function Home() {
         <Card name='Paid Invoices' data='' />
       </div>
 
-      <div className='flex justify-center'>
+      <div className='flex justify-center py-5'>
         <Table />
       </div>
     </section>

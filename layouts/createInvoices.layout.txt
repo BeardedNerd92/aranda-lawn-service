@@ -1,0 +1,53 @@
+### Create Invoices Page Layout
+
+#### Header
+- **Title**: Create New Invoice
+- **Subtitle**: Generate and Send Invoices Effortlessly
+- **Client Selection**: Dropdown or Search Bar to select a client from the database
+- **Invoice Date**: Date Picker to select the invoice creation date
+- **Due Date**: Date Picker to set the payment due date
+
+---
+
+#### Invoice Details Section
+- **Invoice Number**: Auto-generated or manually enter
+- **Invoice Description**: Text area for a brief description of services/products
+- **Service Items**: 
+  - Service Name: Dropdown or Text Input
+  - Quantity: Numeric Input
+  - Unit Price: Numeric Input
+  - Total Price: Calculated automatically based on Quantity and Unit Price
+- **Add More Items**: Button to add additional service items
+- **Subtotal**: Calculated automatically based on total prices of all items
+
+---
+
+#### Tax and Discounts Section
+- **Tax Rate**: Numeric Input (e.g., 7.5%)
+- **Discount**: Numeric Input or Percentage Input (optional)
+- **Tax Amount**: Calculated automatically based on Subtotal and Tax Rate
+- **Discount Amount**: Calculated automatically based on Subtotal and Discount
+- **Total Amount**: Calculated automatically based on Subtotal, Tax, and Discount
+
+---
+
+#### Payment Details Section
+- **Payment Method**: Dropdown to select payment method (e.g., Credit Card, Bank Transfer)
+- **Payment Terms**: Text Input (e.g., Net 30, Due on Receipt)
+- **Additional Notes**: Text area for any additional payment instructions or terms
+
+---
+
+#### Actions Section
+- **Save as Draft**: Button to save the invoice as a draft without sending
+- **Preview Invoice**: Button to preview the invoice before sending
+- **Send Invoice**: Button to send the invoice to the client via email
+- **Cancel**: Button to cancel and return to the dashboard or previous page
+
+---
+
+#### Footer
+- **Disclaimer**: All invoices are subject to our Terms and Conditions.
+- **Contact Information**: For further inquiries, contact [Email Address] or [Phone Number].
+
+---

@@ -5,10 +5,10 @@ import Footer from "./components/footer/Footer";
 
 export default function Layout() {
   return (
-    <>
+    <body className='h-screen bg-sky-50 font-poppins'>
       <Navbar />
       <Outlet />
       <Footer />
-    </>
+    </body>
   );
 }

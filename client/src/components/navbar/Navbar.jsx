@@ -1,66 +1,77 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import SearchBar from "../searchbar/SearchBar";
+import Button from "../button/Button";
+import Logout from "./Logout";
 
 export default function Navbar() {
+  let navBar = [
+    { name: "Home", link: "/" },
+    { name: "Clients", link: "clients" },
+    { name: "Reports", link: "reports" },
+    { name: "Settings", link: "settings" },
+  ];
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header className='sticky w-full top-0 left-0'>
-      <nav className='bg-sky-600 text-white p-4'>
-        <div className='container mx-auto flex justify-between items-center'>
-          <Link to='/' className='text-2xl font-semibold'>
+      <nav className='bg-sky-600 p-4'>
+        {/* Logo */}
+        <div className='container mx-auto  flex justify-between items-center'>
+          <Link
+            to='/'
+            className='hidden-mobile text-2xl mx-3 font-semibold text-green-200'>
             Aranda Lawn Service
           </Link>
-          <ul className='flex space-x-4'>
-            <li>
-              <NavLink
-                to='/'
-                className={({ isActive }) =>
-                  isActive ? "text-gray-300" : "text-white"
-                }>
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to='invoices'
-                className={({ isActive }) =>
-                  isActive ? "text-gray-300" : "text-white"
-                }>
-                Invoices
-              </NavLink>
-            </li>
 
-            <li>
-              <NavLink
-                to='clients'
-                className={({ isActive }) =>
-                  isActive ? "text-gray-300" : "text-white"
-                }>
-                Clients
-              </NavLink>
-            </li>
+          {/* Menu button */}
+          <div className='md:hidden items-center'>
+            <button
+              className='text-2xl text-green-200'
+              onClick={() => setIsOpen(!isOpen)}
+              type='button'>
+              &#9776;
+            </button>
 
-            <li>
-              <NavLink
-                to='reports'
-                className={({ isActive }) =>
-                  isActive ? "text-gray-300" : "text-white"
-                }>
-                Reports
-              </NavLink>
-            </li>
+            {/* Mobile menu */}
+            {isOpen && (
+              <ul className='md:space-x-4  md:hidden md:flex'>
+                {/* Logo Mobile Menu */}
+                <Link to='/' className='text-2xl font-semibold text-green-200'>
+                  Aranda Lawn Service
+                </Link>
+                {navBar.map((navBars) => (
+                  <li>
+                    <NavLink
+                      className={({ isActive }) =>
+                        isActive ? "text-gray-300 py-12" : "text-green-200"
+                      }
+                      to={navBars.link}>
+                      {navBars.name}
+                    </NavLink>
+                  </li>
+                ))}
+                {/* Logout button */}
+                <Logout />
+              </ul>
+            )}
+          </div>
 
-            <li>
-              <NavLink
-                to='settings'
-                className={({ isActive }) =>
-                  isActive ? "text-gray-300" : "text-white"
-                }>
-                Settings
-              </NavLink>
-            </li>
+          {/* Desktop menu */}
+          <ul className='md:space-x-4 hidden   md:flex justify-start pl-9 md:pl-0'>
+            {navBar.map((navBars) => (
+              <li className='flex justify-start'>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "text-gray-300 px-4" : "text-green-200"
+                  }
+                  to={navBars.link}>
+                  {navBars.name}
+                </NavLink>
+              </li>
+            ))}
+            <Logout />
           </ul>
         </div>
       </nav>
