@@ -10,7 +10,7 @@ export default function Home() {
         <Button name='Create +' to='create-invoices' />
       </div>
 
-      <div className='flex flex-row justify-evenly'>
+      <div className='md:flex flex-column justify-evenly'>
         <Card name='Total Invoices' data='' />
         <Card name='Pending Invoices' data='' />
         <Card name='Overdue Invoices' data='' />

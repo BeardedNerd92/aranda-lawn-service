@@ -1,8 +1,6 @@
-import React from "react";
-
 export default function Logout() {
   return (
-    <div className='mt-6 md:mt-0 text-green-200'>
+    <div className='mt-6 md:mt-0 text-green-200 cursor-pointer'>
       <svg
         fill='#A5D6A7'
         height='25px'

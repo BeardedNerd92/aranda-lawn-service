@@ -3,8 +3,11 @@ import { Link, NavLink } from "react-router-dom";
 import SearchBar from "../searchbar/SearchBar";
 import Button from "../button/Button";
 import Logout from "./Logout";
+import Logo from "../../assets/als-min.jpg";
 
 export default function Navbar() {
+  const img = <img className='w-12 rounded-full' src={Logo} alt='' srcset='' />;
+
   let navBar = [
     { name: "Home", link: "/" },
     { name: "Clients", link: "clients" },
@@ -19,10 +22,8 @@ export default function Navbar() {
       <nav className='bg-sky-600 p-4'>
         {/* Logo */}
         <div className='container mx-auto  flex justify-between items-center'>
-          <Link
-            to='/'
-            className='hidden-mobile text-2xl mx-3 font-semibold text-green-200'>
-            Aranda Lawn Service
+          <Link to='/' className='hidden-mobile '>
+            {img}
           </Link>
 
           {/* Menu button */}
@@ -36,11 +37,9 @@ export default function Navbar() {
 
             {/* Mobile menu */}
             {isOpen && (
-              <ul className='md:space-x-4  md:hidden md:flex'>
+              <ul className='md:space-x-4 md:hidden md:flex'>
                 {/* Logo Mobile Menu */}
-                <Link to='/' className='text-2xl font-semibold text-green-200'>
-                  Aranda Lawn Service
-                </Link>
+                <Link to='/'>{img}</Link>
                 {navBar.map((navBars) => (
                   <li>
                     <NavLink
@@ -59,12 +58,12 @@ export default function Navbar() {
           </div>
 
           {/* Desktop menu */}
-          <ul className='md:space-x-4 hidden   md:flex justify-start pl-9 md:pl-0'>
+          <ul className='md:space-x-4 hidden md:flex pl-9 md:pl-0'>
             {navBar.map((navBars) => (
-              <li className='flex justify-start'>
+              <li className=''>
                 <NavLink
                   className={({ isActive }) =>
-                    isActive ? "text-gray-300 px-4" : "text-green-200"
+                    isActive ? "text-gray-300" : "text-green-200"
                   }
                   to={navBars.link}>
                   {navBars.name}
